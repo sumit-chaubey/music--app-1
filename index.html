@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="my music player">
+        <meta keywords="songs,music,albums">
+        <title>Play App</title>
+        <link rel="icon" type="image/x-icon" href="./img/music-notes-svgrepo-com.svg">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script src="script.js"></script>
+    <body> 
+
+<!-- Modal body------------------------------------------------------------- -->
+        <div class="modal">
+            <div class="modal-head">
+                <span><b>Search Results</b></span>
+                <a onclick=closeModal() class="" id="close-btn"><b>X Close</b></a>
+            </div>
+            <div class="modal-body">
+                <h1>No Results</h1>
+                
+            </div>
+        </div>
+<!-- ----------------------------------------------------------------------- -->
+        <div class="skeleton">
+        <div class="header">
+            
+            <div class="header-logo">
+                <div >
+                    <img src="./img/music-notes-svgrepo-com.svg" alt="app-logo">
+                </div>
+                <h5>Play App</h5>
+            </div>
+            <div class="search">
+                <input class="search-inp" id="nav-search" type="text" placeholder="Search for songs here">
+                <button class="search-btn" onclick=search(1) >Search</button>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Songs</a></li>
+                    <li><a href="">Artist</a></li>
+                    <li><a href="">Album</a></li>
+                </ul>
+            </div>
+            
+        </div>
+            <div class="sidebar">
+                
+                <div class="manu"> 
+                    <div class="name-logo">
+                        <div class="logo">
+                            <img src="./img/music-notes-svgrepo-com.svg" alt="app-logo">
+                        </div>
+                         <h5>Play App</h5>
+                    </div>
+                    <div class="search">
+                        <input class="search-inp" id="inp-key" type="text" placeholder="Search for songs here">
+                        <button onclick=search(2) class="search-btn">Search</button>
+                    </div>
+                    <div class="nav-bar">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Songs</a></li>
+                            <li><a href="">Artist</a></li>
+                            <li><a href="">Album</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <div class="player-card">
+                    <div class="song-detail">
+                        <div class="song-image" id="song-img"><img src="./img/music-notes-svgrepo-com.svg" alt=""></div>
+                        <div class="text-desc">
+                            <p style="color: white; text-shadow: 1px 1px 1px rgb(61, 61, 61);" >Now Playing....</p>
+                            <h2 id="song-name">Name of the song</h2>
+                            <h3 id="artist-name">name of the artist</h3>
+                            <h4 id="album-name">album-name</h4>
+                            <select class="song-quality" id="quality" onchange=changeQuality()>
+                                <option value="2">144p</option>
+                                <option value="3">250p</option>
+                                <option value="4">360p</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div class="timeline">
+                            <div class="pointer" id="pointer"></div>
+                        </div>
+                        <div class="ctrl">
+                            <button class="ctrl-btn" id="back" onclick=back()><img src="./img/rewind-10-seconds.svg" alt=""></button>
+                            <button class="ctrl-btn" id="play" onclick=playClick()><img src="./img/music-pause-button-pair-of-lines-svgrepo-com.svg" alt=""></button>
+                            <button class="ctrl-btn" id="forward" onclick=forward()><img src="./img/forward-10-seconds.svg" alt=""></button>
+                            <button class="ctrl-btn" id="dec" onclick=volumDec()><img src="./img/low-volume.png" width="75%"></button>
+                            <button class="ctrl-btn" id="inc" onclick=volumInc()><img src="./img/medium-volume.png" width="75%" alt=""></button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </body>
+</html>
